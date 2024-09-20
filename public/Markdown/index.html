@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="FlImUzKfM9FIzyoiutsHJe08pP08nko9rkesYHEB09U" />
+    <meta name="robots" content="all" />
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/js/uikit-icons.min.js"></script>
+
+    <title>MDEditor</title>
+
+</head>
+<body class="uk-light uk-background-secondary" style="height: 100vh;">
+    <div class="uk-container uk-container-small uk-section">
+        
+        <div class="uk-margin-large">
+            <div class="txt0 uk-textarea uk-margin uk-height-medium">
+
+                *Italic Text* <br>
+                **Bold Text** <br>
+
+                # Heading 1 <br>
+                ## Heading 2 <br>
+                ### Heading 3 <br>
+                #### Heading 4 <br>
+                Horizontal Rule <br>
+                --- <br>
+                > Quoted <br>
+                `Single Line Code` <br>
+                [Its Me Only](https://github.com/AnonymousXC) <br>
+                ![Image](https://avatars.githubusercontent.com/u/96725322?v=4) <br>
+                - ul list <br>
+                ==Mark Tag== <br>
+
+
+
+            </div>
+            <button class="uk-button uk-button-default" id="btn1">Render 1</button>
+        </div>
+        
+        <div>
+            <div contenteditable="true" class="txt1 uk-textarea uk-margin" >
+            </div>
+            <button class="uk-button uk-button-default" id="btn2">Render 2</button>
+        </div>
+    </div>
+    
+    <script src="MDEditor.js"></script>
+
+    <script>
+
+        let x = new MDEditor({
+            div : ".txt0",
+            editable : true,
+            headings : true,
+            quote : true,
+            code: true,
+            horizontalRule : true,
+            links : true,
+            images : true,
+            ulList : true,
+            mark : true
+        });
+
+        let y = new MDEditor({
+            div : ".txt1",
+            editable : true,
+            headings : true,
+            quote : true,
+            code: true,
+            horizontalRule : true,
+            links : true,
+            images : true,
+            ulList : true,
+            mark : true
+        });
+
+        document.querySelector("#btn1").onclick = x.render;
+        document.querySelector("#btn2").onclick = y.render;
+
+    </script>
+
+</body>
+</html>
